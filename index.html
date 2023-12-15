@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png" />
+    <link rel="stylesheet" href="dist/output.css" />
+    <title>
+      Frontend Mentor | Newsletter sign-up form with success message
+    </title>
+  </head>
+  <body class="bg-[#36384E]">
+    <main class="grid place-items-center h-screen bg-[#36384E] max-sm:bg-white">
+      <!-- card -->
+
+      <div
+        id="card"
+        class="grid bg-white rounded-[2.3rem] grid-cols-[1fr_auto] p-[1.5rem] pl-8 h-[fit-content] gap-x-14 max-sm:w-screen max-sm:h-auto max-sm:rounded-none max-sm:grid-cols-1 max-sm:grid-rows-[auto_1fr] max-sm:p-0">
+        <div class="hidden max-sm:flex items-start">
+          <img
+            class="w-full"
+            src="assets/images/illustration-sign-up-mobile.svg"
+            alt="Mobile signup" />
+        </div>
+
+        <div class="grid grid-rows-3 gap-0 pl-9 max max-sm:p-6">
+          <div class="grid items-center relative top-6">
+            <h1
+              class="relative top-4 text-5xl font-bold font-['Roboto', sans-serif]">
+              Stay updated!
+            </h1>
+            <p
+              class="pb-[10px] text-[16px] max-sm:text-[14px] font-['Roboto', sans-serif] font- py-4">
+              Join 60,000+ product managers receiving monthly<br />updates on:
+            </p>
+          </div>
+          <div class="grid py-8 relative bottom-4">
+            <ul class="grid grid-rows-3">
+              <li
+                class="flex items-center gap-x-4 max-lg:text-[14px] max-lg:leading-5">
+                <img src="assets/images/icon-list.svg" alt="" /> Product
+                discovery and buildingwhat matters
+              </li>
+              <li
+                class="flex items-center gap-x-4 max-lg:text-[14px] max-lg:leading-5">
+                <img src="assets/images/icon-list.svg" alt="" />
+                Measuring to ensure updates are a success
+              </li>
+              <li
+                class="flex items-center gap-x-4 max-lg:text-[14px] max-lg:leading-5">
+                <img src="assets/images/icon-list.svg" alt="" />And much more!
+              </li>
+            </ul>
+          </div>
+          <div class="relative bottom-8">
+            <form class="grid">
+              <div class="grid w-[100%] grid-cols-[1fr_auto] gap-y-4">
+                <label class="text-[14px] font-bold" for="email"
+                  >Email address</label
+                >
+                <label
+                  id="emailError"
+                  class="hidden float-right text-[#FF6257] text-[12px]"
+                  >Valid email required</label
+                >
+              </div>
+              <input
+                class="py-3 px-3 mt-2 mb-6 bg-white border border-[#9294A0] rounded-md"
+                type="email"
+                placeholder="example@company.com"
+                id="email" />
+              <button
+                onclick="validateEmail()"
+                class="py-3 px-3 border text-white rounded-md bg-[#36384E] transition-all hover:bg-gradient-to-r from-[#FF6257] to-orange-400"
+                type="submit">
+                Subscribe to monthly newsletter
+              </button>
+            </form>
+          </div>
+        </div>
+        <!-- img hide when width 768px-->
+        <div class="flex justify-end max-md:hidden">
+          <img
+            class="w-[375px] max-lg:w-[300px]"
+            src="assets/images/illustration-sign-up-desktop.svg"
+            alt="desktop signup" />
+        </div>
+      </div>
+    </main>
+
+    <!-- Success message-->
+
+    <dialog
+      id="dia"
+      class="rounded-[2.5rem] backdrop:bg-[#242742] max-sm:backdrop:bg-white max-sm:w-screen max-sm:rounded-none max-sm:h-screen">
+      <div
+      id="diaIn"
+        class="grid justify-start py-12 px-14 w-[450px] max-sm:w-full max-sm:p-0 max-sm:gap-y-16 gap-y-6">
+        <img src="assets/images/icon-success.svg" alt="successImage" />
+        <h1 class="text-5xl font-bold">Thanks for subscribing!</h1>
+        <p class="text-[16px]">
+          A confirmation email has been sent to
+          <strong>ash@loremcompany.com</strong>. Please open it and click the
+          button inside to confirm your subscription.
+        </p>
+        <button
+          class="py-3 px-3 border text-white rounded-md bg-[#36384E] transition-all hover:bg-gradient-to-r from-[#FF6257] to-orange-400"
+          id="disDia">
+          Dismiss message
+        </button>
+      </div>
+    </dialog>
+
+    <script src="script.js"></script>
+  </body>
+</html>
